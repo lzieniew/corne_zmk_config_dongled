@@ -1,0 +1,95 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#include <dt-bindings/zmk/pointing.h>
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            retro-tap;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_gaming {
+            timeout-ms = <50>;
+            key-positions = <1 5 6 10>;    // Q, T, Y, P keys
+            bindings = <&to 4>;
+        };
+    };
+
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+// -----------------------------------------------------------------------------------------
+// |     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |     |
+// |     |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |     |
+// |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |     |
+//                   | CAPS| SPC |   | ENT | BSPC |
+                        bindings = <
+   &none     &kp Q       &kp W      &kp E       &kp R       &kp T         &kp Y    &kp U       &kp I       &kp O      &kp P     &none
+   &none     &hm LSHFT A &hm LALT S &hm LGUI D  &hm LCTRL F &kp G         &kp H    &hm RCTRL J &hm RGUI K  &hm RALT L &hm RSHFT SEMI &none
+   &none     &kp Z       &kp X      &kp C       &kp V       &kp B         &kp N    &kp M       &kp COMMA   &kp DOT    &kp FSLH  &none
+                         &none      &lt 1 CAPS   &kp SPACE                 &kp RET  &lt 2 BSPC  &none
+                        >;
+                };
+
+                lower_layer {
+                        bindings = <
+   &none     &kp N1     &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &none
+   &none     &kp LSHFT  &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT &none
+   &none     &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &none     &none     &none     &none     &kp SQT   &none
+                        &none         &trans         &kp SPACE                     &kp RET   &lt 3 BSPC &none
+                        >;
+                };
+
+                raise_layer {
+                        bindings = <
+   &none     &kp TAB   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET &kp GRAVE &kp SEMI  &kp SQT   &kp BSPC  &none
+   &none     &kp TAB   &kp LALT  &kp LGUI  &kp LCTRL &none        &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp RSHFT &none
+   &none     &none     &none     &none     &none     &none        &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp BSLH  &none
+                       &none     &lt 3 CAPS &kp SPACE              &kp RET   &trans    &none
+                        >;
+                };
+
+                adjust_layer {
+                        bindings = <
+   &none     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &none
+   &none     &none     &none     &mkp MB1  &mkp MB2  &mkp MB3     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none &none
+   &none     &none     &none     &none     &none     &none        &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
+                       &none     &trans    &kp SPACE               &kp RET   &trans    &none
+                        >;
+                };
+
+                gaming_layer {
+// -----------------------------------------------------------------------------------------
+// |     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |     |
+// |     |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |     |
+// |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |     |
+//                   |TO(0)| SPC |   | ENT | BSPC |
+                        bindings = <
+   &none     &kp Q     &kp W      &kp E       &kp R       &kp T         &kp Y    &kp U       &kp I       &kp O      &kp P     &none
+   &none     &hm LSHFT A &kp S      &kp D       &kp F       &kp G         &kp H    &kp J       &kp K       &kp L      &kp SEMI  &none
+   &none     &kp Z     &kp X      &kp C       &kp V       &kp B         &kp N    &kp M       &kp COMMA   &kp DOT    &kp FSLH  &none
+                       &none      &to 0        &kp SPACE                 &kp RET  &kp BSPC    &none
+                        >;
+                };
+        };
+};
