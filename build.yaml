@@ -26,6 +26,6 @@ include:
     shield: corne_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano_v2
-    shield: my_corne_dongled
+    shield: corne_dongled
   - board: nice_nano_v2
     shield: settings_reset

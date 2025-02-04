@@ -1,4 +1,4 @@
-if SHIELD_MY_CORNE_DONGLED
+if SHIELD_CORNE_DONGLED
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
