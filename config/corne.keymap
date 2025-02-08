@@ -47,7 +47,7 @@
    &kp Q       &kp W      &kp E       &kp R       &kp T         &kp Y    &kp U       &kp I       &kp O      &kp P
    &hm LSHFT A &hm LALT S &hm LGUI D  &hm LCTRL F &kp G         &kp H    &hm RCTRL J &hm RGUI K  &hm RALT L &hm RSHFT SEMI
    &kp Z       &kp X      &kp C       &kp V       &kp B         &kp N    &kp M       &kp COMMA   &kp DOT    &kp FSLH  &none
-                         &none      &lt 1 CAPS   &kp SPACE                 &kp RET  &lt 2 BSPC  &none
+                         &lt 1 CAPS   &kp SPACE                 &kp RET  &lt 2 BSPC
                         >;
                 };
 
@@ -56,7 +56,7 @@
    &kp N1     &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
    &kp LSHFT  &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT
    &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &none     &none     &none     &none     &kp SQT
-                        &none         &trans         &kp SPACE                     &kp RET   &lt 3 BSPC &none
+                        &trans         &kp SPACE                     &kp RET   &lt 3 BSPC
                         >;
                 };
 
@@ -65,7 +65,7 @@
    &kp TAB   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET &kp GRAVE &kp SEMI  &kp SQT   &kp BSPC
    &kp TAB   &kp LALT  &kp LGUI  &kp LCTRL &none        &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp RSHFT
    &none     &none     &none     &none     &none        &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp BSLH
-                       &none     &lt 3 CAPS &kp SPACE              &kp RET   &trans    &none
+                       &lt 3 CAPS &kp SPACE              &kp RET   &trans
                         >;
                 };
 
@@ -74,7 +74,7 @@
    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10
    &none     &none     &mkp MB1  &mkp MB2  &mkp MB3     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
    &none     &none     &none     &none     &none        &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
-                       &none     &trans    &kp SPACE               &kp RET   &trans    &none
+                       &trans    &kp SPACE               &kp RET   &trans
                         >;
                 };
 
@@ -88,7 +88,7 @@
    &kp Q     &kp W      &kp E       &kp R       &kp T         &kp Y    &kp U       &kp I       &kp O      &kp P
    &hm LSHFT A &kp S      &kp D       &kp F       &kp G         &kp H    &kp J       &kp K       &kp L      &kp SEMI
    &kp Z     &kp X      &kp C       &kp V       &kp B         &kp N    &kp M       &kp COMMA   &kp DOT    &kp FSLH
-                       &none      &to 0        &kp SPACE                 &kp RET  &kp BSPC    &none
+                       &to 0        &kp SPACE                 &kp RET  &kp BSPC
                         >;
                 };
         };
