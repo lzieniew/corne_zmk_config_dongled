@@ -24,6 +24,7 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+    };
         custom_lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -34,7 +35,6 @@
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
-    };
 
     combos {
         compatible = "zmk,combos";
@@ -67,7 +67,7 @@
    &kp N1     &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
    &kp LSHFT  &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT
    &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &none     &none     &none     &none     &kp SQT
-                        &trans         &kp SPACE                     &kp RET   &lt 3 BSPC
+                        &trans         &kp SPACE                     &kp RET   &custom_lt 3 BSPC
                         >;
                 };
 
@@ -76,7 +76,7 @@
    &kp TAB   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET &kp GRAVE &kp SEMI  &kp SQT   &kp BSPC
    &kp TAB   &kp LALT  &kp LGUI  &kp LCTRL &none        &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp RSHFT
    &none     &none     &none     &none     &none        &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp BSLH
-                       &lt 3 CAPS &kp SPACE              &kp RET   &trans
+                       &custom_lt 3 CAPS &kp SPACE              &kp RET   &trans
                         >;
                 };
 
