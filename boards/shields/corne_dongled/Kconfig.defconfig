@@ -23,4 +23,7 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 6
 
+config ZMK_MOUSE
+    default y
+
 endif
